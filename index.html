@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- title and logo  -->
     <title>Sign In | GitHub Issues Tracker</title>
-    <!-- <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" /> -->
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon" />
 
     <!-- font awesome  -->
     <link
@@ -27,13 +27,69 @@
       rel="stylesheet"
       type="text/css"
     />
-
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- stylesheet  -->
     <link rel="stylesheet" href="style.css" />
   </head>
-<body>
-    
+
+<body class="min-h-screen bg-base-200 flex items-center justify-center p-4">
+  <main class="card w-full max-w-lg bg-base-100 shadow-md">
+    <div class="card-body gap-4 p-8">
+
+      <header class="text-center">
+        <!-- form-section -->
+        <div class="mb-3">
+          <img src="./assets/github-logo.png" alt="Github Logo" class="w-24 mx-auto">
+        </div>
+        <h1 class="text-2xl font-bold">GitHub Issues Tracker</h1>
+        <p class="text-sm text-gray-500">Sign in to manage your issues</p>
+      </header>
+      <!-- Login form -->
+      <form id="loginForm" class="flex flex-col gap-3">
+        <div>
+          <label for="usernameInput" class="block mb-1 text-sm font-medium">Username</label>
+          <input
+            id="usernameInput"
+            type="text"
+            placeholder="Enter Username"
+            class="input input-bordered w-full"
+            required
+          />
+          <p class="mt-1 text-xs text-primary">Default: admin</p>
+        </div>
+
+        <div>
+          <label for="passwordInput" class="block mb-1 text-sm font-medium">Password</label>
+          <input
+            id="passwordInput"
+            type="password"
+            placeholder="Enter Password"
+            class="input input-bordered w-full"
+            required
+          />
+          <p class="mt-1 text-xs text-primary">Default: admin123</p>
+        </div>
+        <!-- Error message -->
+        <p id="loginError" class="hidden text-sm text-error"></p>
+        <button id="signInButton" type="submit" class="btn btn-primary w-full">Sign In</button>
+      </form>
+
+      <!-- Divider -->
+      <div class="divider text-sm my-0">OR</div>
+
+      <!-- Demo credentials -->
+      <section class="text-center">
+        <p class="text-xs text-gray-500 mb-2">Demo Credentials:</p>
+        <div class="bg-base-200 rounded-lg py-4 text-sm">
+          <p><span class="font-semibold">Username:</span> admin</p>
+          <p><span class="font-semibold">Password:</span> admin123</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
 </body>
 </html>                                            
